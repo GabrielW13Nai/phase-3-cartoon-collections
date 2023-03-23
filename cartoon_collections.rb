@@ -12,7 +12,7 @@ def roll_call_dwarves dwarfs
 
 end
 
-planeteer_calls = ['earth', 'wind', 'fire', 'water', 'heart']
+
 
 def summon_captain_planet planeteers
   arr = []
@@ -22,41 +22,50 @@ def summon_captain_planet planeteers
   return arr
 end
 
-calls_long = ["axe", "earth", "wind", "fire"]
-calls_short = ["wind", "fire", "tree", "axe", "code"]
 
 
 def long_planeteer_calls characters
-  arr = []
-  characters.each do |str|
-    arr<<str.length
-  end
-  i=0
-  while i<arr.length
-    if arr[i]>4
-      return true
-    else
-      return false
-    end
-    i+=1
+  longest = characters.max_by(&:length)
+  if longest.length > 4
+    return true
+  else
+    return false
   end
   
-
-
 end
 
-def find_the_cheese# code an argument here
-  # the array below is here to help
-  cheese_types = ["cheddar", "gouda", "camembert"]
+
+
+def find_the_cheese cheese
+  cheese.find do |type| 
+  # cheese_types = ["cheddar", "gouda", "camembert"]
+  # cheese_types.map do |cheese| 
+    if type=="cheddar" 
+      p "True" 
+    else 
+      p"False"
+    end
+  end
 end
 
 
 roll_call_dwarves ['Doc', 'Dopey', 'Bashful', 'Grumpy', 'Sneezy', 'Sleepy', 'Happy']
 
 
-
+planeteer_calls = ['earth', 'wind', 'fire', 'water', 'heart']
 summon_captain_planet planeteer_calls
+
+calls_long = ["axe", "earth", "wind", "fire"]
+calls_short = ["wind", "fire", "tree", "axe", "code"]
 
 long_planeteer_calls calls_long
 
 long_planeteer_calls calls_short
+
+snacks = ["crackers", "gouda", "thyme"]
+
+soup = ["tomato soup", "cheddar", "oyster crackers", "gouda"]
+
+find_the_cheese snacks
+
+find_the_cheese soup
