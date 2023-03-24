@@ -37,17 +37,10 @@ end
 
 
 def find_the_cheese cheese
-  cheese.find do |type| 
-  # cheese_types = ["cheddar", "gouda", "camembert"]
-  # cheese_types.map do |cheese| 
-    if type=="cheddar" 
-      p "True" 
-    else 
-      p"False"
-    end
-  end
-end
+  cheese_types = ["cheddar", "gouda", "camembert"]
+  (cheese & cheese_types).find{|str| p str}
 
+end
 
 roll_call_dwarves ['Doc', 'Dopey', 'Bashful', 'Grumpy', 'Sneezy', 'Sleepy', 'Happy']
 
